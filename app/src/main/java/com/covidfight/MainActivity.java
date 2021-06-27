@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         final int ScreenDisplay = 2000;
         Thread t1=new Thread(){
-            int wait1=0;
+            int wait1=1;
             public void run(){
                 try{
                     while(wait1<=ScreenDisplay )
