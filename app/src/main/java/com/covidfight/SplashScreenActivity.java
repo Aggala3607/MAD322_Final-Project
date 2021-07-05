@@ -4,16 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Window;
+import android.view.WindowManager;
 
-public class MainActivity extends AppCompatActivity {
+import com.covidfight.R;
+import com.covidfight.UserLoginActivity;
 
+public class SplashScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        final int ScreenDisplay = 2000;
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        setContentView(R.layout.splash_activity_main);
+        getSupportActionBar().hide();
+
+
+        final int ScreenDisplay = 1500;
         Thread t1=new Thread(){
-            int wait1=1;
+            int wait1=0;
             public void run(){
                 try{
                     while(wait1<=ScreenDisplay )
@@ -26,13 +35,14 @@ public class MainActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally{
-                   // Intent i= new Intent(MainActivity.this, UserLoginActivity.class);
-                   // startActivity(i);
+                    Intent intentg= new Intent(SplashScreenActivity.this, UserLoginActivity.class);
+                    startActivity(intentg);
                     finish();
 
                 }
             }
         };
         t1.start();
+
     }
 }
