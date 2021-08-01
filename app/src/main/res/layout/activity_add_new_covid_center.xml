@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/adminlogin"
+    android:orientation="vertical"
+    tools:context=".activity.addNewCovidCenter">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Covid Centers"
+        android:textColor="#000"
+        android:layout_margin="20dp"
+        android:textSize="30dp"
+        android:paddingTop="50dp"
+        />
+
+
+    <EditText
+        android:id="@+id/covid_center_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_rounded"
+        android:drawablePadding="10dp"
+        android:hint="Enter  Hospital Name"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:textSize="19sp" />
+
+
+    <EditText
+        android:id="@+id/covid_center_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_rounded"
+        android:drawablePadding="10dp"
+        android:hint="Enter  Hospital city"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:textSize="19sp" />
+
+
+    <EditText
+        android:id="@+id/covid_center_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/covid_center_name"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_rounded"
+        android:drawablePadding="10dp"
+        android:hint="Enter  Hospital Phone Number"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/covid_center_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/covid_center_phone"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/edittext_rounded"
+        android:drawablePadding="10dp"
+        android:hint="Enter  Hospital Address"
+        android:padding="20dp"
+        android:singleLine="true"
+        android:textSize="19sp" />
+
+
+    <Button
+        android:id="@+id/btn_add_center"
+        android:layout_width="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/covid_center_address"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/buttons"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:text="Add covid center"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+
+</LinearLayout>

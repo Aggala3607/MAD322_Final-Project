@@ -1,4 +1,4 @@
-package com.covidfight;
+package com.covidfight.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.covidfight.R;
-import com.covidfight.UserLoginActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     @Override
@@ -20,7 +19,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-        final int ScreenDisplay = 1500;
+        final int ScreenDisplay = 5000;
         Thread t1=new Thread(){
             int wait1=0;
             public void run(){

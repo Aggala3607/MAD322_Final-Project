@@ -19,7 +19,7 @@ public class AdminDashboardActivity extends AppCompatActivity {
     private ActionBarDrawerToggle t;
     private NavigationView nv;
     private DrawerLayout dl;
-    Button btn_guide,btn_travel,btn_notification,btn_news;
+    Button btn_guide,btn_travel,btn_notification,btn_news,btn_centers;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,24 @@ public class AdminDashboardActivity extends AppCompatActivity {
         btn_travel=(Button)findViewById(R.id.btn_travel);
         btn_notification=(Button)findViewById(R.id.btn_notification);
         btn_news=(Button)findViewById(R.id.btn_news);
+
+
+        btn_centers=(Button)findViewById(R.id.btn_centers);
+        btn_centers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), AdminCentersActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        btn_notification.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(), AdminNotificationsActivity.class);
+                startActivity(intent);
+            }
+        });
 
         btn_guide.setOnClickListener(new View.OnClickListener() {
             @Override
