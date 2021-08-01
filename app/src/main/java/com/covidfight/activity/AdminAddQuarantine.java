@@ -13,8 +13,6 @@ import android.widget.Toast;
 
 import com.covidfight.R;
 import com.covidfight.api.ApiService;
-import com.covidfight.api.RetroClient;
-import com.covidfight.model.ResponseData;
 
 import retrofit2.Call;
 import retrofit2.Callback;

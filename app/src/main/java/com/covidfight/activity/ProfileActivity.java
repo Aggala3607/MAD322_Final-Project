@@ -2,7 +2,6 @@ package com.covidfight.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -14,8 +13,6 @@ import android.widget.Toast;
 import com.covidfight.R;
 import com.covidfight.Utils;
 import com.covidfight.api.ApiService;
-import com.covidfight.api.RetroClient;
-import com.covidfight.model.Account;
 
 import java.util.List;
 
