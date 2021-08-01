@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/MAD322_Final-Project.iml" filepath="$PROJECT_DIR$/.idea/MAD322_Final-Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CovidFight.iml" filepath="$PROJECT_DIR$/.idea/modules/CovidFight.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CovidFight.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CovidFight.app.iml" />
     </modules>
   </component>
 </project>

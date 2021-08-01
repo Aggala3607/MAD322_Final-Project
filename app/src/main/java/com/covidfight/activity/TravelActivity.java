@@ -1,4 +1,4 @@
-package com.covidfight.activity;
+    package com.covidfight.activity;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
@@ -21,49 +21,51 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class QuanrantineActivity extends AppCompatActivity {
+public class TravelActivity extends AppCompatActivity {
 
     List<Info> info;
 
-    ListView quanantine_list;
+    ListView travel_list;
     ProgressDialog p;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quanrantine);
-        getSupportActionBar().setTitle("Quarantine Guidelines");
+        setContentView(R.layout.activity_travel);
+        getSupportActionBar().setTitle("Travel Guidelines");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        quanantine_list=(ListView)findViewById(R.id.quanantine_list);
+        travel_list=(ListView)findViewById(R.id.travel_list);
 
         info = new ArrayList<>();
-        getQuarantineGuidelines();
+        getTravelGuidelines();
     }
 
-    public void getQuarantineGuidelines() {
-        p = new ProgressDialog(QuanrantineActivity.this);
+
+    public void getTravelGuidelines() {
+        p = new ProgressDialog(TravelActivity.this);
         p.setMessage("Loading....");
         p.show();
 
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<List<Info>> call = service.getquarantineinfo();
+        Call<List<Info>> call = service.gettravelinfo();
         call.enqueue(new Callback<List<Info>>() {
             @Override
             public void onResponse(Call<List<Info>> call, Response<List<Info>> response) {
                 p.dismiss();
-              //  Toast.makeText(QuanrantineActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(TravelActivity.this, response.toString(), Toast.LENGTH_SHORT).show();
                 if (response.body() == null) {
-                    Toast.makeText(QuanrantineActivity.this, "No data found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TravelActivity.this, "No data found", Toast.LENGTH_SHORT).show();
                 } else {
                     info = response.body();
-                    quanantine_list.setAdapter(new InfoAdapter(info, QuanrantineActivity.this));
+                    travel_list.setAdapter(new InfoAdapter(info, TravelActivity.this));
                 }
             }
             @Override
             public void onFailure(Call<List<Info>> call, Throwable t) {
                 p.dismiss();
-                Toast.makeText(QuanrantineActivity.this, "Please contact admin !", Toast.LENGTH_SHORT).show();
+                Toast.makeText(TravelActivity.this, "Please contact admin !", Toast.LENGTH_SHORT).show();
             }
         });
     }

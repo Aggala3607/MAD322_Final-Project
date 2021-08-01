@@ -1,4 +1,4 @@
-package com.covidfight;
+package com.covidfight.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,6 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import com.covidfight.R;
-import com.covidfight.UserLoginActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
     @Override

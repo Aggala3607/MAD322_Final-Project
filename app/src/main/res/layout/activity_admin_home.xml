@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AdminHome"
+    android:orientation="vertical"
+    android:background="@drawable/adminhome">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome Admin"
+        android:textSize="40dp"
+        android:textColor="#fff"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:textStyle="bold"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+       <Button
+           android:id="@+id/btn_guide"
+           android:layout_width="wrap_content"
+           android:layout_height="match_parent"
+           android:background="@drawable/edittext_rounded"
+           android:text="Quarantine Guidelines"
+           android:textSize="20dp"
+           android:layout_margin="10dp"
+           android:layout_weight="1"
+           android:drawableTop="@drawable/ic_guidelines_svg"
+           android:padding="10dp"/>
+
+        <Button
+            android:id="@+id/btn_travel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext_rounded"
+            android:text="Travel Guidelines"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/instructions"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp">
+
+        <Button
+            android:id="@+id/btn_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext_rounded"
+            android:text="Notifications"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:drawableTop="@drawable/notification"
+            android:padding="20dp"/>
+
+        <Button
+            android:id="@+id/btn_news"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/edittext_rounded"
+            android:text="news"
+            android:textSize="20dp"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:drawableTop="@drawable/news"
+            android:padding="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

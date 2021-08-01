@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/adminlogin"
+    android:orientation="vertical"
+   >
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="center"
+        android:text="Travel guidelines"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        android:layout_marginTop="50dp"
+        android:padding="20dp"
+        android:textColor="#000000"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:layout_gravity="right"
+        android:background="@drawable/buttons"
+        android:textColor="#fff"
+        android:id="@+id/btntravel"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+
+        android:layout_margin="20dp"
+        android:background="@drawable/edittext_rounded"
+        >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:textAlignment="inherit"
+            android:text="If COVID-19 is spreading in your community, stay safe by taking some simple precautions, such as physical distancing, wearing a mask, keeping rooms well ventilated,
+"
+            />
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
