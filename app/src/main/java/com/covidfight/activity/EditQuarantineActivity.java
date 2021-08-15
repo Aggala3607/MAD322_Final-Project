@@ -20,73 +20,73 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class EditNotificationsActivity extends AppCompatActivity {
+public class EditQuarantineActivity extends AppCompatActivity {
 
-    EditText notification_title, notification_desc;
-
-    Button btn_update_notification;
+    EditText guideline_title,guideline_desc;
+    Button updateguideline;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_edit_notifications);
-        getSupportActionBar().setTitle("update Notification");
+        setContentView(R.layout.activity_edit_quarantine);
+        getSupportActionBar().setTitle("Update Quarantine Guidelines");
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        notification_title = findViewById(R.id.notification_title);
-        notification_desc = findViewById(R.id.notificatiaon_desc);
-        btn_update_notification = findViewById(R.id.btn_update_notification);
+        guideline_title = findViewById(R.id.guideline_title);
+        guideline_desc = findViewById(R.id.guideline_desc);
+        updateguideline = findViewById(R.id.updateguideline);
 
-        notification_title.setText(getIntent().getStringExtra("title"));
-        notification_desc.setText(getIntent().getStringExtra("description"));
 
-        btn_update_notification.setOnClickListener(new View.OnClickListener() {
+        guideline_title.setText(getIntent().getStringExtra("title"));
+        guideline_desc.setText(getIntent().getStringExtra("description"));
+
+        updateguideline.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(notification_title.getText().toString().isEmpty()){
-                    Toast.makeText(EditNotificationsActivity.this, "Enter Title", Toast.LENGTH_SHORT).show();
+                if(guideline_title.getText().toString().isEmpty()){
+                    Toast.makeText(EditQuarantineActivity.this, "Enter Title", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                else if(notification_desc.getText().toString().isEmpty()){
-                    Toast.makeText(EditNotificationsActivity.this, "Enter Description", Toast.LENGTH_SHORT).show();
+                else if(guideline_desc.getText().toString().isEmpty()){
+                    Toast.makeText(EditQuarantineActivity.this, "Enter Description", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 else {
-                    updateNotificationData();
+                    updateQuarantineData();
                 }
             }
         });
     }
     ProgressDialog p;
 
-    private void updateNotificationData() {
-        String title = notification_title.getText().toString();
-        String description = notification_desc.getText().toString();
+    private void updateQuarantineData() {
+        String title = guideline_title.getText().toString();
+        String description = guideline_desc.getText().toString();
         String id = getIntent().getStringExtra("id");
-        p = new ProgressDialog(EditNotificationsActivity.this);
+        p = new ProgressDialog(EditQuarantineActivity.this);
         p.setMessage("Adding please wait");
         p.show();
         ApiService service = RetroClient.getRetrofitInstance().create(ApiService.class);
-        Call<ResponseData> call = service.editnotifications(id,title,description);
+        Call<ResponseData> call = service.editquantine(id,title,description);
         call.enqueue(new Callback<ResponseData>() {
             @Override
             public void onResponse(Call<ResponseData> call, Response<ResponseData> response) {
                 p.dismiss();
                 if (response.body().status.equals("true")) {
-                    Toast.makeText(EditNotificationsActivity.this, response.body().message, Toast.LENGTH_LONG).show();
-                    Intent intent = new Intent(EditNotificationsActivity.this, AdminDashboardActivity.class);
+                    Toast.makeText(EditQuarantineActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                    Intent intent = new Intent(EditQuarantineActivity.this, AdminDashboardActivity.class);
                     startActivity(intent);
                     finish();
 
                 } else {
-                    Toast.makeText(EditNotificationsActivity.this, response.body().message, Toast.LENGTH_LONG).show();
+                    Toast.makeText(EditQuarantineActivity.this, response.body().message, Toast.LENGTH_LONG).show();
                 }
             }
             @Override
             public void onFailure(Call<ResponseData> call, Throwable t) {
                 p.dismiss();
-                Toast.makeText(EditNotificationsActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
+                Toast.makeText(EditQuarantineActivity.this, t.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
     }
